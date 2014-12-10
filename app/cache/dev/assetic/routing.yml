@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: /home/rado/www/html/C/Sym_task/Symfony/app/config/routing.yml

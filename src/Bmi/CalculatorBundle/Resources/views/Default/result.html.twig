@@ -1,0 +1,21 @@
+{% extends 'BmiCalculatorBundle::layout.html.twig' %}
+
+
+
+{% block body %}
+
+{{parent()}}
+
+<h3>Entered Values</h3>
+Weight: <b>{{ User_weight }}</b> kg.
+<br>
+Height: <b>{{ User_height }}</b> m.
+
+
+<h3>Calculation Result</h3>
+ BMI: <b>{{ User_bmi }}</b> kg/m2
+ 
+ <br> <br>
+ <input type="button" onClick="document.location='{{ path('bmi_calculator_homepage', {  } ) }}'" style="width: 390px; " value="ENTER NEW VALUES">
+
+{% endblock %}

@@ -1,0 +1,32 @@
+<!-- app/Resources/views/bmi.html.twig -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
+        
+        <title>{% block title %}BMI CALCULATOR -> Test Task By Rado{%endblock%}</title>
+        
+        
+       
+        <link href="{{ asset('css/screen.css') }}" type="text/css" rel="stylesheet" />
+      
+        
+       
+        <script type="text/javascript" src="{{ asset('js/jquery-1.7.1.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/bmi.js') }}"></script>
+        
+        {% block additional_js_links %}{% endblock %}
+
+        
+    </head>
+    <body>
+            <bodycontent id="bodycontent">
+                
+                    {% block body %}{% endblock %}
+                     
+                
+            </bodycontent>
+    </body>
+</html>

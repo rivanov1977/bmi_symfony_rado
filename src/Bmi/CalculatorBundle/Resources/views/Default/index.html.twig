@@ -1,0 +1,63 @@
+{% extends 'BmiCalculatorBundle::layout.html.twig' %}
+
+
+{% block additional_js_links %}
+    {{ parent() }}
+    <script>
+        var calc_options_W = {{ calc_options_W|raw }};
+        var calc_options_H = {{ calc_options_H|raw }};
+        var calculation_weight_select = "{{ calculation_weight_select }}";
+        var calculation_height_select = "{{ calculation_height_select }}";
+        var calculation_weight_vals = "{{ calculation_weight_vals }}";
+        var calculation_weights = calculation_weight_vals.split(',');
+        var calculation_height_vals = "{{ calculation_height_vals }}";
+        var calculation_heights = calculation_height_vals.split(',');
+        
+        
+        
+        
+    </script>
+    <script type="text/javascript" src="{{ asset('js/calculator.js') }}"></script>
+{% endblock %}
+
+
+{% block body %}
+
+{{parent()}}
+
+<span style="color: red;">{{calculation_message|raw}}</span>
+
+<form id="registration_form" action="{{ path('bmi_calculator_result', {  } ) }}" method="post" class="blogger">
+    
+    <h3 id="weight_select_label"></h3>
+    
+    <div style="width: 400px; float:left;">
+        <select style="width: 390px; " onChange="W_changed();" name="weight_select" id="weight_select">
+            <option class="weight_select_opt" value="-1"/>
+        </select>
+    </div>    
+    
+    <div id="W_val_holder" style=" border-left: solid 1px #ccc; width: 300px; float:left;">
+        <div style="margin-left: 15px; float:left;" class="opt_val"><input style="width: 50px; float:left;" type="text"><div class="sfx" style="margin-left:5px; float:left;">x</div></div>
+    </div>
+    
+    <div style="clear: both;"></div>
+     
+    <h3 id="height_select_label"></h3>
+    
+    <div style="width: 400px; float:left;">
+        <select style="width: 390px; " onChange="H_changed();" name="height_select" id="height_select">
+        </select>
+    </div>    
+    
+    <div id="H_val_holder" style=" border-left: solid 1px #ccc; width: 300px; float:left;">
+    </div>
+    
+    <div style="clear: both;"></div>
+    
+    <p>
+        <input type="submit" style="width: 390px; height: 40px; " value="CALCULATE BMI">
+    </p>
+</form>
+
+{% endblock %}

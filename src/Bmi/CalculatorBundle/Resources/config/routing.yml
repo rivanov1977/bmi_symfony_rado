@@ -1,0 +1,7 @@
+bmi_calculator_homepage:
+    defaults: { _controller: BmiCalculatorBundle:Default:index }
+    pattern:   /
+    
+bmi_calculator_result:
+    defaults: { _controller: BmiCalculatorBundle:Default:result }
+    pattern:   /result
